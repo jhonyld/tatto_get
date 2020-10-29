@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "64497753393",
+    "firebase_url": "https://tattoget.firebaseio.com",
+    "project_id": "tattoget",
+    "storage_bucket": "tattoget.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64497753393:android:401ba99c6e0db2c3a9e410",
+        "android_client_info": {
+          "package_name": "com.example.tatto_get"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64497753393-h6l0m63aa85anbbvgnnnkf0r6ol6028c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyUCHReZroOw-Z7S_8SefeKaVQ2TFXIQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64497753393-h6l0m63aa85anbbvgnnnkf0r6ol6028c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
