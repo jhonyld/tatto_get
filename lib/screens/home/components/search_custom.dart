@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tatto_get/controllers/home_controller.dart';
+import 'package:tatto_get/models/artista.dart';
 
 class SearchCustom extends StatelessWidget {
   const SearchCustom({
@@ -7,6 +10,7 @@ class SearchCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final HomeController homeController = Get.find();
     return Expanded(
       child: Container(
         margin: EdgeInsets.all(20),
@@ -15,6 +19,7 @@ class SearchCustom extends StatelessWidget {
         width: 200,
         alignment: Alignment.centerLeft,
         child: TextField(
+          onChanged: homeController.onSearchTextChanged("j"),
           decoration: InputDecoration(
               icon: Icon(
                 Icons.search,

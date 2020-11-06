@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:tatto_get/consts.dart';
-import 'package:tatto_get/models/tatuador.dart';
+import 'package:tatto_get/models/categories.dart';
+import 'package:tatto_get/models/artista.dart';
 import 'package:tatto_get/screens/componentes/list_categories.dart';
 
 class ArtistCard extends StatelessWidget {
   const ArtistCard({
     Key key,
-    this.tatuador,
+    this.artista,
   }) : super(key: key);
 
-  final Tatuador tatuador;
+  final Artista artista;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class ArtistCard extends StatelessWidget {
                     bottomLeft: Radius.circular(20),
                     topLeft: Radius.circular(20)),
                 image: DecorationImage(
-                  image: NetworkImage(tatuador.fotoUrl),
+                  image: NetworkImage(artista.fotoUrl),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -46,7 +47,7 @@ class ArtistCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      tatuador.estudio,
+                      artista.estudio,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
@@ -57,12 +58,12 @@ class ArtistCard extends StatelessWidget {
                       child: Container(color: kColorOne),
                     ),
                     Text(
-                      tatuador.nome,
+                      artista.nome,
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                     ),
                     Text(
-                      'Endereço:' + tatuador.endereco,
+                      'Endereço:' + artista.endereco,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
                       style: TextStyle(fontSize: 12),
@@ -70,10 +71,10 @@ class ArtistCard extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    //Spacer(),
-                    // ListCategories(
-                    //   listCategories: tatuador.categories,
-                    // )
+                    Spacer(),
+                    ListCategories(
+                      listCategories: artista.categories,
+                    )
                   ],
                 ),
               ),

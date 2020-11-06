@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:tatto_get/models/tatuador.dart';
+import 'package:tatto_get/models/artista.dart';
 
 class FirestoreService {
   FirebaseFirestore db = FirebaseFirestore.instance;
@@ -32,9 +32,13 @@ class FirestoreService {
     });
   }
 
-  Stream<List<Tatuador>> getTatuador() {
+  Stream<List<Artista>> getArtist() {
     return db.collection('Artista').snapshots().map((snapshot) =>
-        snapshot.docs.map((doc) => Tatuador.fromJson(doc.data())).toList());
+        snapshot.docs.map((doc) => Artista.fromJson(doc.data())).toList());
+  }
+
+  Future getArtistTest() async {
+    return listArtistas;
   }
 
   void getDataByFilter({String name}) {

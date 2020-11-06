@@ -1,8 +1,20 @@
 class Categories {
-  final int idCategories;
-  final String name;
+  int idCategories;
+  String name;
 
   Categories({this.idCategories, this.name});
+
+  Categories.fromJson(Map<String, dynamic> json) {
+    idCategories = json['idCategories'];
+    name = json['name'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['idCategories'] = this.idCategories;
+    data['name'] = this.name;
+    return data;
+  }
 }
 
 List<Categories> listCategories = [
