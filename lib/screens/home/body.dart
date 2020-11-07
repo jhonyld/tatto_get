@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    homeController.listArtist = listArtistas;
+    //homeController.listArtist = listArtistas.obs;
     return Container(
       child: Column(
         children: [
@@ -31,13 +31,15 @@ class Body extends StatelessWidget {
             ],
           ),
           Flexible(
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: homeController.listArtist.length,
-              itemBuilder: (context, index) => ArtistCard(
-                artista: homeController.listArtist[index],
-              ),
-            ),
+            child: GetX<HomeController>(builder: (_) {
+              return ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: homeController.listArtistFiltrado.length,
+                itemBuilder: (context, index) => ArtistCard(
+                  artista: homeController.listArtistFiltrado[index],
+                ),
+              );
+            }),
           )
         ],
       ),

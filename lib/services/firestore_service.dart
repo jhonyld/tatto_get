@@ -37,10 +37,6 @@ class FirestoreService {
         snapshot.docs.map((doc) => Artista.fromJson(doc.data())).toList());
   }
 
-  Future getArtistTest() async {
-    return listArtistas;
-  }
-
   void getDataByFilter({String name}) {
     db
         .collection("Artista")

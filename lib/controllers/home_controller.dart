@@ -2,12 +2,23 @@ import 'package:get/get.dart';
 import 'package:tatto_get/models/artista.dart';
 
 class HomeController extends GetxController {
-  var listArtist = List<Artista>().obs;
+  var listArtistFiltrado = List<Artista>().obs;
+
+  void onInit() {
+    super.onInit();
+    fetchArtists();
+  }
+
+  void fetchArtists() {
+    listArtistFiltrado.value = listaGeral;
+  }
 
   onSearchTextChanged(String text) {
-    listArtist = listArtist
-        .where((a) => (a.nome.toLowerCase().contains(text.toLowerCase())));
+    List<Artista> listaArtista = listaGeral;
+    listaArtista = listaArtista
+        .where((a) => (a.nome.toLowerCase().contains(text.toLowerCase())))
+        .toList();
 
-    print(listArtist);
+    listArtistFiltrado.value = listaArtista;
   }
 }

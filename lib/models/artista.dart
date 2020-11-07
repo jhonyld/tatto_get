@@ -41,7 +41,7 @@ class Artista {
   }
 }
 
-List<Artista> listArtistas = [
+List<Artista> listaGeral = [
   Artista(
     estudio: 'Estúdio 1',
     nome: 'Jhony Tatto',

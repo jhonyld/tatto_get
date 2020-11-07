@@ -19,7 +19,9 @@ class SearchCustom extends StatelessWidget {
         width: 200,
         alignment: Alignment.centerLeft,
         child: TextField(
-          onChanged: homeController.onSearchTextChanged("j"),
+          onChanged: (textoFiltrado) {
+            homeController.onSearchTextChanged(textoFiltrado);
+          },
           decoration: InputDecoration(
               icon: Icon(
                 Icons.search,
